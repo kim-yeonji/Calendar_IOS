@@ -21,17 +21,6 @@ public class CalendarListViewModel extends ViewModel {
 
     public int mCenterPosition;
 
-    public void setTitle(int position) {
-        try {
-            Object item = mCalendarList.getValue().get(position);
-            if (item instanceof Long) {
-                setTitle((Long) item);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void setTitle(long time) {
         mCurrentTime = time;
         mTitle.setValue(DateFormat.getDate(time, DateFormat.CALENDAR_HEADER_FORMAT));
